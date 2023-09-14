@@ -11,7 +11,7 @@ on:
 
 jobs:
   publish-docs:
-    uses: turkenf/uptest/.github/workflows/updoctest.yml@main
+    uses: turkenf/uptest/.github/workflows/updoc.yml@main
     with:
       familypacks: ${{ github.event.inputs.familypacks }}      
     secrets:
