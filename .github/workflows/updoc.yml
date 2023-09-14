@@ -3,16 +3,15 @@ name: Updoc
 on:
   workflow_dispatch:
     inputs:
-      familypacks:
-        description: 'Family packages to be published(except monolith)'
-        default: ''
+      subpackages:
+        description: 'Subpackages to be published individually (e.g. monolith config ec2)'
+        default: 'monolith'
         required: false
-        type: string
 
 jobs:
   publish-docs:
     uses: turkenf/uptest/.github/workflows/updoc.yml@main
     with:
-      familypacks: ${{ github.event.inputs.familypacks }}      
+      subpackages: ${{ github.event.inputs.subpackages }}      
     secrets:
       UPBOUND_CI_PROD_BUCKET_SA: ${{ secrets.UPBOUND_CI_PROD_BUCKET_SA }}
