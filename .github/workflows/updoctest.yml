@@ -1,4 +1,4 @@
-name: Updoc
+name: UpdocTest
 
 on:
   workflow_dispatch: {}
