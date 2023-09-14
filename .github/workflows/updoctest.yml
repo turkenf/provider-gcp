@@ -1,0 +1,18 @@
+name: Updoc
+
+on:
+  workflow_dispatch:
+    inputs:
+      familypacks:
+        description: 'Family packages to be published(except monolith)'
+        default: ''
+        required: false
+        type: string
+
+jobs:
+  publish-docs:
+    uses: turkenf/uptest/.github/workflows/updoc.yml@main
+    with:
+      familypacks: ${{ github.event.inputs.familypacks }}
+    secrets:
+      UPBOUND_CI_PROD_BUCKET_SA: ${{ secrets.UPBOUND_CI_PROD_BUCKET_SA }}
