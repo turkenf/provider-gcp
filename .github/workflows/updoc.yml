@@ -5,6 +5,8 @@ on:
 
 jobs:
   publish-docs:
-    uses: turkenf/uptest/.github/workflows/updoc.yml@main     
+    uses: turkenf/uptest/.github/workflows/updoc.yml@main
+    with:
+      publish-pack: "monolith config"
     secrets:
       UPBOUND_CI_PROD_BUCKET_SA: ${{ secrets.UPBOUND_CI_PROD_BUCKET_SA }}
